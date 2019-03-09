@@ -1,4 +1,5 @@
-const path = require('path'),
+const webpack = require('webpack'),
+      path = require('path'),
       MiniCssExtractPlugin = require('mini-css-extract-plugin'),
       CopyWebpackPlugin = require('copy-webpack-plugin'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
@@ -6,8 +7,8 @@ const path = require('path'),
       ImageminMozjpeg = require('imagemin-mozjpeg');
       
 const PATHS = {
-  src: path.join(__dirname, '../src'),
-  dist: path.join(__dirname, '../dist'),
+  src: path.join(__dirname, '../src/'),
+  dist: path.join(__dirname, '../dist/'),
   assets: 'assets/'
 }
 
@@ -22,7 +23,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].js`,
     path: PATHS.dist,
-    publicPath: '/'
+    publicPath: ''
   },
   module: {
     rules: [{
@@ -30,9 +31,9 @@ module.exports = {
       loader: 'babel-loader',
       exclude: '/node_modules/'
     }, {
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      loader: 'file-loader',
-      options: { name: '[name].[ext]' }
+      test: /\.(jpe?g|png|gif|svg)$/,
+      loader: 'file-loader,',
+      options: { name: '[name].[ext]'}
     }, {
       test: /\.scss$/,
       use: [
@@ -64,6 +65,11 @@ module.exports = {
       ]
     }]
   },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].css`
@@ -71,16 +77,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: false,
       template: `${PATHS.src}/index.html`,
-      filename: './index.html'
+      filename: 'index.html',
+      useRelativePath: true
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/static`, to: 'static/' },
     ]),
     new ImageminPlugin({
-      disable: process.env.NODE_ENV !== 'production', // Disable during development
-      pngquant: ({quality: 80-90}),
-      plugins: [ImageminMozjpeg({quality: 90})]
+      disable: process.env.NODE_ENV !== 'production',
+      pngquant: ({quality: 85-90}),
+      plugins: [ImageminMozjpeg({quality: 95})]
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ]
 }

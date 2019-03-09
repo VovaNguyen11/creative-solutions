@@ -1,0 +1,34 @@
+.services {
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        text-align: center;
+    }
+
+    &__item{
+        padding: 100px 0 130px;
+        box-sizing: border-box;
+        &:nth-child(4n + 1),
+        &:nth-child(4n + 4){
+            background-color: #dbdbdb;;
+        }
+    }
+
+    &__heading {
+        @include font-dark;
+        font-size: rem(24);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 20px 0 10px 0;
+    }
+
+    &__text {
+        @include font-dark;
+        font-size: rem(18);
+        font-weight: 300;
+        font-style: italic;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}

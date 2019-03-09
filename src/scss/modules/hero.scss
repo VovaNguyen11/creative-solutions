@@ -1,0 +1,32 @@
+.hero {
+    position: relative;
+    padding: 400px 0 500px;
+    background: $main-color;
+
+    &::before {
+        @include overlay('/assets/img/bg-hero.jpg');
+        opacity: 0.5;
+    }
+
+    &__body {
+        position: relative;
+        text-align: center;
+    }
+
+    .heading {
+        @include font-heading-light;
+        font-size: rem(72);
+        text-transform: uppercase;
+        color: $altFontColor;
+        margin: 0;
+    }
+
+    .subheading {
+        max-width: 730px;
+        margin: 0 auto;
+        @include font-light;
+        font-size: rem(30);
+        font-weight: normal;
+        font-style: italic;
+    }
+}

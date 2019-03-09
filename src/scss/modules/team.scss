@@ -1,0 +1,59 @@
+.team {
+    padding: 50px 0 100px;
+    background-color: #ebebeb;
+    text-align: center;
+
+    &__slider {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 30px;
+    }
+
+    .worker {
+        padding: 160px 0 0;
+        text-align: center;
+        background: #ffffff;
+        position: relative;
+        margin-top: 190px;
+
+        &__avatar {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            display: block;
+
+            &-wrapper {
+                position: absolute;
+                top: -125px;
+                left: 0;
+                right: 0;
+                width: 250px;
+                height: 250px;
+                padding: 15px;
+                margin: 0 auto;
+                border-radius: 50%;
+                background-color: #ebebeb;
+                box-sizing: border-box;
+            }
+        }
+
+        &__name {
+            font-family: $mainFont;
+            color: $main-color;
+            font-size: rem(24);
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        &__position {
+            @include font-dark;
+            font-size: rem(24);
+            font-weight: 300;
+            font-style: italic;
+            display: block;
+            margin-bottom: 45px;
+        }
+    }
+}

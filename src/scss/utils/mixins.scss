@@ -15,19 +15,11 @@
   height: $height;
 }
 
-@mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}
-}
-
-
 $largePhone: 640px;
 $tabletPortrait: 768px;
 $largePhoneLandscape: 812px;
 $tabletLandscape: 1024px;
-
+$desktop: 1024px;
 
 @mixin respond-to($media) {
 
@@ -52,7 +44,7 @@ $tabletLandscape: 1024px;
 	}
 
 	@else if $media == desktop {
-		@media (min-device-width: 1024px) { @content; }
+		@media (min-device-width: $desktop) { @content; }
 	}
 
 	@else if $media == ipadpro {
@@ -63,45 +55,7 @@ $tabletLandscape: 1024px;
 			@content;
 		}
 	}
-
 }
-
-
-
-@mixin image2x() {
-	@media (min--moz-device-pixel-ratio: 1.3),
-	(-o-min-device-pixel-ratio: 2.6/2),
-	(-webkit-min-device-pixel-ratio: 1.3),
-	(min-device-pixel-ratio: 1.3),
-	(min-resolution: 1.3dppx) {
-		@content;
-	}
-}
-
-
-@mixin font-face($style-name, $filepath) {
-	@font-face {
-		font-family: "#{$style-name}";
-		src: url($filepath + '.eot');
-		src: url($filepath + '.eot?#iefix') format('embedded-opentype'),
-		url($filepath + '.woff') format('woff'),
-		url($filepath + '.ttf') format('truetype'),
-		url($filepath + '.svg') format('svg');
-		font-weight: normal;
-		font-style: normal;
-	}
-}
-
-
-// =============================================================================
-// font-size mixin with REM fallback
-// =============================================================================
-
-@mixin font-size($sizeValue: $default-text-size) {
-	font-size: $sizeValue + px;
-	font-size: ($sizeValue / 10) + rem ;
-}
-
 
 @mixin center() {
 	//-webkit-font-smoothing: antialiased;
@@ -111,54 +65,64 @@ $tabletLandscape: 1024px;
 	transform: translate(-50%,-50%);
 }
 
-
-@function black($opacity){
-	@return rgba(0,0,0,$opacity);
+@mixin flex-wrapped() {
+	display: flex;
+	flex-wrap: wrap;
 }
 
-@function white($opacity){
-	@return rgba(255,255,255,$opacity);
+@mixin flex-between() {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-@mixin box-emboss($opacity, $opacity2){
-	box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+@mixin flex-centered() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-
-@mixin transition($transition) {
-	-moz-transition:    $transition;
-	-o-transition:      $transition;
-	-webkit-transition: $transition;
-	transition:         $transition;
+@mixin list-reset {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
-@mixin noselect {
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Chrome/Safari/Opera */
-	-khtml-user-select: none; /* Konqueror */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently
-								  not supported by any browser */
+@mixin section-bg($url) {
+	background: url($url);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
-@mixin transform ($val) {
-	-webkit-transform: $val;
-	-moz-transform: $val;
-	-ms-transform: $val;
-	transform: $val;
+@mixin overlay($url) {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: url($url);
 }
 
-@mixin transform-mob ($val) {
-	-webkit-transform: $val!important;
-	-moz-transform: $val!important;
-	-ms-transform: $val!important;
-	transform: $val!important;
+@mixin font-heading-light {
+	font-family: $mainFont;
+	color: $altFontColor;
+	font-weight: 700;
 }
 
-@mixin transform-origin ($val) {
-	-webkit-transform-origin: $val;
-	-moz-transform-origin: $val;
-	-ms-transform-origin: $val;
-	transform-origin: $val;
+@mixin font-heading-dark {
+	font-family: $mainFont;
+	color: $mainFontColor;
+	font-weight: 700;
+}
+
+@mixin font-dark {
+	font-family: $altFont;
+	color: $mainFontColor;
+}
+
+@mixin font-light {
+	font-family: $altFont;
+	color: $altFontColor;
 }

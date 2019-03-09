@@ -1,0 +1,27 @@
+.header {
+    position: absoluteп;
+    left: 0;
+    right: 0;
+    padding: 35px 0;
+    background-color: $main-color;
+    z-index: 10;
+}
+
+.logo {}
+
+.nav {
+    &__list {
+        @include list-reset();
+        display: flex;
+    }
+
+    &__item {}
+
+    &__link {
+        font-family: $mainFont;
+        color: $altFontColor;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 20px 15px;
+    }
+}

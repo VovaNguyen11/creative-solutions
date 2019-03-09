@@ -1,14 +1,18 @@
 // Font
 $mainFont       : 'ProximaNova', sans-serif;
-$mainFont       : 'PT Sans', sans-serif;
-$mainFontColor  : #665f60;
+$altFont        : 'PT Sans', sans-serif;
 $mainFontSize   : 18px;
-$altFontColor   : #fefdfd;
+$mainFontColor  : #665f60;
+$altFontColor   : #fefefe;
 
 // Main color
 $main-color     : #9f9acf;
 $alt-color      : #ebebeb;
 $main-bg-color  : $main-color;
+$alt-bg-color   : $alt-color;
+$form-bg-color  : #ebebeb80;
+$form-bg-color  : #ebebeb80;
+
 
 //Buttons
 $btn-bg         : $main-color;

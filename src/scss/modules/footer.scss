@@ -1,0 +1,10 @@
+.footer{
+    box-sizing: border-box;
+    padding: 75px 30px;
+    background-color: $main-bg-color;
+
+    .copyright{
+        @include font-light;
+        font-weight: normal;
+    }
+}

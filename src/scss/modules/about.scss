@@ -1,0 +1,17 @@
+.about {
+    padding: 120px 0;
+
+    &__body {
+        padding: 70px 0 100px 120px;
+        box-sizing: border-box;
+    }
+
+    &__text{
+        @include font-dark;
+        font-size: rem(20);
+        margin: 0 0 105px;
+        &:not(:last-of-type){
+            margin-bottom: 25px;  
+        }
+    }
+}
