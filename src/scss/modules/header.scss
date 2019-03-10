@@ -1,10 +1,22 @@
 .header {
-    position: absoluteп;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     padding: 35px 0;
-    background-color: $main-color;
     z-index: 10;
+    transition: padding .5s ease-in-out, background-color .5s ease-in-out;
+    // transition-delay: .1s;
+    background-color: $main-color;
+
+    &.sticky{
+        padding: 10px 0; 
+        background-color: $main-color;  
+    }
+
+    &--transparent{
+        background-color: transparent;
+    }
 }
 
 .logo {}

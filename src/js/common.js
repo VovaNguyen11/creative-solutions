@@ -1,5 +1,25 @@
 (($) => {
     $(document).ready(() => {
+
+        //Sticky Header
+        const $header = $('.header');
+        let scrollPosition = 0;
+        $(window).scroll(() => {
+            if (window.scrollY > scrollPosition) {
+                scrollPosition = window.scrollY;
+                $header.addClass('sticky');
+            } else {
+                $header.removeClass('sticky');
+                scrollPosition = window.scrollY - 1;
+                console.log('w' + window.scrollY);
+                if(window.scrollY > 200){
+                    $header.removeClass('header--transparent');
+                }  else{
+                    $header.addClass('header--transparent');
+                }
+            }
+        });
+
         $('.works-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
