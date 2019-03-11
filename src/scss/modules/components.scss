@@ -11,6 +11,7 @@
         }
 
         padding: 75px 0 0;
+
         @include respond-to(phone) {
             padding: 30px 0 0;
         }
@@ -40,7 +41,7 @@
         margin: 0;
     }
 
-    &__img{
+    &__img {
         position: relative;
     }
 
@@ -59,6 +60,7 @@
 
     &--services {
         margin-bottom: 110px;
+
         @include respond-to(phone) {
             margin-bottom: 30px;
         }
@@ -84,7 +86,8 @@
     &--about {
         color: #7d7a7c;
         border: 1px solid #7d7a7c;
-        &:hover{
+
+        &:hover {
             border: 1px solid $main-color;
             background-color: $main-bg-color;
             color: $altFontColor;
@@ -94,7 +97,8 @@
     &--works {
         color: $altFontColor;
         border: 1px solid #ffffff;
-        &:hover{
+
+        &:hover {
             background-color: $alt-bg-color;
             color: $mainFontColor;
         }
@@ -106,37 +110,61 @@
 
     &__link {
         text-decoration: none;
+        transition: transform 1s ease-in-out;
+
         &:not(:last-of-type) {
             margin-right: 25px;
+
             @include respond-to(phone) {
                 margin-right: 10px;
             }
         }
+        &:hover{
+            transform: rotate(360deg);
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
     }
 
-    &--team{
+    &--team {
         box-sizing: border-box;
         padding: 20px 0;
         background-color: $main-bg-color;
     }
 }
 
-.back-to-top{
+.back-to-top {
     @include flex-centered;
     position: absolute;
-    bottom: 100px;
+    bottom: 80px;
     right: 130px;
-    @include size(5vw);
+    @include size(85px);
     box-sizing: border-box;
     background-color: rgba($color: $main-bg-color, $alpha: .5);
     z-index: 100;
     cursor: pointer;
     transition: background-color .3s ease-in-out;
-    img{
+
+    img {
         width: calc(35/85 * 100%);
         height: auto;
     }
-    &:hover{
+
+    &:hover {
         background-color: rgba($color: $main-bg-color, $alpha: 1);
     }
+
+    @include respond-to(phone) {
+        @include size(50px);
+        bottom: 65px;
+        right: 15px;
+    }
+}
+
+section:focus {
+    outline: none;
 }

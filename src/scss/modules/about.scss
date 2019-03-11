@@ -25,7 +25,7 @@
     &__text {
         @include font-dark;
         font-size: rem(20);
-        margin: 0 0 105px;
+        margin: 0 0 90px;
 
         @include respond-to(phone) {
             margin: 0 0 50px;

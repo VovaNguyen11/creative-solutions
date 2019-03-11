@@ -16,6 +16,7 @@
         right: -260px;
         transition: right 1s ease-in-out;
         z-index: 10;
+
         @include respond-to(phone) {
             right: -180px;
         }
@@ -26,12 +27,13 @@
     }
 
     &__phone {
-        top: 308px;
+        top: 309px;
+
         @include respond-to(phone) {
-            top: 265px;
+            top: 260px;
         }
     }
-    
+
     &__info {
         width: 260px;
         background-color: rgba($color: $alt-bg-color, $alpha: .5);
@@ -39,6 +41,7 @@
         box-sizing: border-box;
         @include flex-centered;
         flex-direction: column;
+
         @include respond-to(phone) {
             width: 180px;
         }
@@ -53,11 +56,13 @@
     }
 
     &__icon {
+        @include flex-centered;
+        @include size(90px);
         background-color: $main-bg-color;
-        width: 90px;
-        height: 90px;
-        padding: 25px;
-        box-sizing: border-box;
+
+        @include respond-to(phone) {
+            @include size(75px);
+        }
     }
 
     .form {
@@ -73,20 +78,23 @@
         }
 
         &>*:not(.form__errors-list):not(.form__submit) {
-            border:1px solid transparent;
+            border: 1px solid transparent;
             background-color: $form-bg-color;
             padding: 20px 30px;
             box-sizing: border-box;
             @include font-light;
             font-size: rem(18);
             border-radius: $border-radius;
-            &:focus{
+
+            &:focus {
                 outline: none;
             }
-            &[class*="invalid"]{
-                border:1px solid red;
+
+            &[class*="invalid"] {
+                border: 1px solid red;
             }
-            &[class*="invalid"]::placeholder{
+
+            &[class*="invalid"]::placeholder {
                 color: red;
             }
         }
@@ -110,6 +118,7 @@
             width: 100%;
             height: 200px;
             margin-bottom: 55px;
+            resize: none;
 
             @include respond-to(phone) {
                 margin-bottom: 30px;
@@ -132,13 +141,16 @@
             border: none;
             border-bottom: 4px solid rgba(0, 0, 0, .15);
             border-radius: $border-radius;
-            appearance: none;
-            cursor: pointer;
             transition: transform .2s, background-color .2s;
 
             &:hover {
                 transform: translateY(4px);
                 background-color: darken($main-bg-color, 2%);
+            }
+
+            @include respond-to(phone) {
+                width: 175px;
+                padding: 20px;
             }
         }
 
@@ -153,9 +165,10 @@
             text-align: left;
             position: absolute;
             top: 75px;
+
             @include respond-to(phone) {
                 display: none;
-            } 
+            }
         }
 
         &__errors {
