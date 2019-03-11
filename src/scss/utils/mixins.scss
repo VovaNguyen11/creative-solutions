@@ -23,8 +23,8 @@ $desktop: 1024px;
 
 @mixin respond-to($media) {
 
-	@if $media == middleSmartphone {
-		@media (max-device-width: $largePhone) { @content; }
+	@if $media == phone  {
+		@media (min-device-width: 320px) and (max-device-width: $largePhone) { @content; }
 	}
 
 	@else if $media == tablet {
@@ -126,3 +126,8 @@ $desktop: 1024px;
 	font-family: $altFont;
 	color: $altFontColor;
 }
+
+@mixin size($width,$height: $width) {
+	width: $width;
+	height: $height;
+  }

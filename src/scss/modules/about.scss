@@ -1,17 +1,42 @@
 .about {
     padding: 120px 0;
 
-    &__body {
-        padding: 70px 0 100px 120px;
-        box-sizing: border-box;
+    @include respond-to(tablet) {
+        padding: 90px 0;
     }
 
-    &__text{
+    @include respond-to(phone) {
+        padding: 40px 0;
+    }
+
+    &__body {
+        padding: 60px 0 85px 120px;
+        box-sizing: border-box;
+
+        @include respond-to(tablet) {
+            padding: 40px 0 50px 100px;
+        }
+
+        @include respond-to(phone) {
+            padding: 20px 0;
+        }
+    }
+
+    &__text {
         @include font-dark;
         font-size: rem(20);
         margin: 0 0 105px;
-        &:not(:last-of-type){
-            margin-bottom: 25px;  
+
+        @include respond-to(phone) {
+            margin: 0 0 50px;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 25px;
+
+            @include respond-to(phone) {
+                margin-bottom: 15px;
+            }
         }
     }
 }

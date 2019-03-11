@@ -2,11 +2,21 @@
     padding: 50px 0 100px;
     background-color: #ebebeb;
     text-align: center;
+    overflow: hidden;
 
-    &__slider {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0 30px;
+    @media (min-device-width: 768px) and (max-device-width: 1024px){
+        >.container {
+            max-width: 750px;
+        }
+    }
+
+    @include respond-to(phone) {
+        padding: 30px 0 70px;
+    }
+
+    &-slider {
+        width: calc(100% - 60px);
+        margin: 0 auto;
     }
 
     .worker {
@@ -15,6 +25,10 @@
         background: #ffffff;
         position: relative;
         margin-top: 190px;
+
+        @include respond-to(phone) {
+            margin-top: 130px;
+        }
 
         &__avatar {
             width: 100%;
@@ -27,13 +41,20 @@
                 top: -125px;
                 left: 0;
                 right: 0;
+                bottom: 0;
                 width: 250px;
                 height: 250px;
+                // width: calc(250/350 * 100%);
                 padding: 15px;
                 margin: 0 auto;
                 border-radius: 50%;
                 background-color: #ebebeb;
                 box-sizing: border-box;
+
+                @include respond-to(phone) {
+                    width: 225px;
+                    height: 225px;
+                }
             }
         }
 

@@ -1,11 +1,14 @@
 .hero {
     position: relative;
     padding: 400px 0 500px;
-    background: $main-color;
+    @include section-bg('/assets/img/bg-hero.jpg');
 
-    &::before {
-        @include overlay('/assets/img/bg-hero.jpg');
-        opacity: 0.5;
+    @include respond-to(tablet) {
+        padding: 300px 0 350px;
+    }
+    
+    @include respond-to(phone) {
+        padding: 175px 0 225px;
     }
 
     &__body {

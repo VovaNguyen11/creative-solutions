@@ -2,25 +2,35 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
-
-  &--header {
-    @include flex-between;
-  }
+  box-sizing: border-box;
 
   &--about {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: calc(380/1170 * 100%) auto;
+
+    @include respond-to(phone) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &--services {
     display: grid;
     grid-template-columns: calc(760/1170 * 100%) calc(410/1170 * 100%);
+
+    @include respond-to(phone) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+    }
   }
 
-  &--footer{
+  &--footer {
     @include flex-between;
     padding: 0 30px;
     box-sizing: border-box;
+
+    @include respond-to(phone) {
+      flex-direction: column;
+    }
   }
 }
 

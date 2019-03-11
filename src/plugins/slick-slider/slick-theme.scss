@@ -15,6 +15,8 @@ $slick-dot-color: #fefefe !default;
 $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: url('/assets/img/icons/arrow-left.svg') !default;
 $slick-next-character: url('/assets/img/icons/arrow-right.svg') !default;
+$slick-prev-dark: url('/assets/img/icons/arrow-left-dark.svg') !default;
+$slick-next-dark: url('/assets/img/icons/arrow-right-dark.svg') !default;
 $slick-dot-character: url('/assets/img/icons/doet.svg') !default;
 $slick-dot-size: 6px !default;
 $slick-opacity-default: 1 !default;
@@ -100,7 +102,7 @@ $slick-opacity-not-active: 1 !default;
     }
 }
 
-.slick-prev {
+.works-slider .slick-prev {
     left: -240px;
     [dir="rtl"] & {
         left: auto;
@@ -114,7 +116,7 @@ $slick-opacity-not-active: 1 !default;
     }
 }
 
-.slick-next {
+.works-slider .slick-next {
     right: -240px;
     [dir="rtl"] & {
         left: -25px;
@@ -124,6 +126,36 @@ $slick-opacity-not-active: 1 !default;
         content: $slick-next-character;
         [dir="rtl"] & {
             content: $slick-prev-character;
+        }
+    }
+}
+
+.team-slider .slick-prev {
+    top: 60%;
+    left: -60px;
+    [dir="rtl"] & {
+        left: auto;
+        right: -25px;
+    }
+    &:before {
+        content: $slick-prev-dark;
+        [dir="rtl"] & {
+            content: $slick-next-dark;
+        }
+    }
+}
+
+.team-slider .slick-next {
+    top: 60%;
+    right: -60px;
+    [dir="rtl"] & {
+        left: -25px;
+        right: auto;
+    }
+    &:before {
+        content: $slick-next-dark;
+        [dir="rtl"] & {
+            content: $slick-prev-dark;
         }
     }
 }
@@ -187,11 +219,13 @@ $slick-opacity-not-active: 1 !default;
                 border: 2px solid #fefefe;
                 color: $slick-dot-color;
                 opacity: 1;
+                transition: background-color .2s ease-in-out;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;   
             }
         }
         &.slick-active button:before {
+            background: #fefefe;
             color: $slick-dot-color-active;
             opacity: $slick-opacity-default;
         }
@@ -199,19 +233,19 @@ $slick-opacity-not-active: 1 !default;
 }
 
 @media screen and (max-width: 1024px) {
-    .slick-prev {
-        left: -180px;
+    .works-slider .slick-prev {
+        left: -130px;
     }
-    .slick-next{
-        right: -180px;
+    .works-slider .slick-next{
+        right: -130px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .slick-prev {
+    .works-slider .slick-prev {
         left: -100px;
     }
-    .slick-next{
+    .works-slider .slick-next{
         right: -100px;
     }
 }

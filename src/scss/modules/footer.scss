@@ -1,10 +1,18 @@
-.footer{
+.footer {
     box-sizing: border-box;
     padding: 75px 30px;
     background-color: $main-bg-color;
 
-    .copyright{
+    .copyright {
         @include font-light;
         font-weight: normal;
+    }
+
+    @include respond-to(phone) {
+        padding: 30px 0px;
+
+        .copyright {
+            margin-bottom: 30px;
+        }
     }
 }

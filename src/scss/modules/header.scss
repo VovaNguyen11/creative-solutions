@@ -1,39 +1,85 @@
 .header {
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     padding: 35px 0;
-    z-index: 10;
+    z-index: 100;
     transition: padding .5s ease-in-out, background-color .5s ease-in-out;
-    // transition-delay: .1s;
     background-color: $main-color;
 
-    &.sticky{
-        padding: 10px 0; 
-        background-color: $main-color;  
+    @include respond-to(phone) {
+        padding: 20px 0;
     }
 
-    &--transparent{
+    &.sticky {
+        padding: 10px 0;
+        background-color: $main-color;
+    }
+
+    &--transparent {
         background-color: transparent;
+
+        @include respond-to(phone) {
+            background-color: $main-color;
+        }
+    }
+
+    .menu-icon {
+        display: none;
+        width: 40px;
+
+        @include respond-to(phone) {
+            display: block;
+        }
     }
 }
 
-.logo {}
+.logo {
+    &__img {
+        @include respond-to(phone) {
+            height: 60px;
+        }
+    }
+}
 
 .nav {
+    @include flex-between;
+    @include flex-wrapped;
+
     &__list {
         @include list-reset();
         display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        transition: .5s ease-in-out;
+
+        @include respond-to(phone) {
+            max-height: 0;
+
+            &.showing {
+                max-height: 300px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
     }
 
-    &__item {}
+    &__item {
+        @include respond-to(phone) {
+            width: 100%;
+            text-align: center;
+        }
+    }
 
     &__link {
-        font-family: $mainFont;
-        color: $altFontColor;
+        display: inline-block;
+        @include font-heading-light;
         font-weight: 700;
+        text-transform: uppercase;
         text-decoration: none;
         padding: 20px 15px;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
