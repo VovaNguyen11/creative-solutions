@@ -304,9 +304,9 @@
                         <p v-for="(error, index) in errors" :key="index" class="form__errors">* {{error}}</p>
                     </li>
                 </ul>
-                <input type="text" name="fullName" v-model="fullName" class="form__name" placeholder="Your Name *" />
-                <input type="email" name="email" v-model="email" class="form__email" placeholder="Your Email *"/>
-                <textarea name="message" v-model="message" class="form__textarea" placeholder="Your Message *"></textarea>
+                <input type="text" name="fullName" v-model="fullName" class="form__name" placeholder="Your Name *" v-bind:class="{ invalidName: invalidName }"/>
+                <input type="email" name="email" v-model="email" class="form__email" placeholder="Your Email *" v-bind:class="{ invalidMail: invalidMail }"/>
+                <textarea name="message" v-model="message" class="form__textarea" placeholder="Your Message *" v-bind:class="{ invalidMsg: invalidMsg }"></textarea>
                 <input class="form__submit" type="submit" value="Send message" />
             </form>
             <a class="back-to-top">

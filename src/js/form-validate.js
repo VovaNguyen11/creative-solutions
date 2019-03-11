@@ -6,7 +6,10 @@ const app = new Vue({
         errors: [],
         fullName: '',
         email: '',
-        message: ''
+        message: '',
+        invalidName: false,
+        invalidMail: false,
+        invalidMsg: false
     },
     methods: {
         check(e) {
@@ -14,14 +17,24 @@ const app = new Vue({
             this.errors.length = 0;
             if (!this.fullName) {
                 this.errors.push('Name is rquired');
+                this.invalidName = true;
+            } else {
+                this.invalidName = false;
             }
             if (!this.email) {
                 this.errors.push('Email is required');
+                this.invalidMail = true;
             } else if (!this.validateEmail(this.email)) {
                 this.errors.push('Valid email is required');
+                this.invalidMail = true;
+            } else {
+                this.invalidMail = false;
             }
             if (!this.message) {
                 this.errors.push('Message is required');
+                this.invalidMsg = true;
+            } else {
+                this.invalidMsg = false;
             }
             if (!this.errors.length) {
                 alert('Form successfully sended');
