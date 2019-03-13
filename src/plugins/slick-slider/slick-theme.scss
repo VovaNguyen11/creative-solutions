@@ -73,7 +73,7 @@ $slick-opacity-not-active: 1 !default;
     cursor: pointer;
     background: transparent;
     color: transparent;
-    top: 45%;
+    top: 50%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
@@ -103,7 +103,7 @@ $slick-opacity-not-active: 1 !default;
 }
 
 .works-slider .slick-prev {
-    left: -240px;
+    left: -265px;
     [dir="rtl"] & {
         left: auto;
         right: -25px;
@@ -117,7 +117,7 @@ $slick-opacity-not-active: 1 !default;
 }
 
 .works-slider .slick-next {
-    right: -240px;
+    right: -265px;
     [dir="rtl"] & {
         left: -25px;
         right: auto;
@@ -132,7 +132,7 @@ $slick-opacity-not-active: 1 !default;
 
 .team-slider .slick-prev {
     top: 60%;
-    left: -60px;
+    left: -75px;
     [dir="rtl"] & {
         left: auto;
         right: -25px;
@@ -147,7 +147,7 @@ $slick-opacity-not-active: 1 !default;
 
 .team-slider .slick-next {
     top: 60%;
-    right: -60px;
+    right: -75px;
     [dir="rtl"] & {
         left: -25px;
         right: auto;
@@ -163,12 +163,12 @@ $slick-opacity-not-active: 1 !default;
 /* Dots */
 
 .slick-dotted.slick-slider {
-    margin-bottom: 90px;
+    margin-bottom: 103px;
 }
 
 .slick-dots {
     position: absolute;
-    bottom: -45px;
+    bottom: -57px;
     list-style: none;
     display: block;
     text-align: center;
@@ -234,10 +234,10 @@ $slick-opacity-not-active: 1 !default;
 
 @media screen and (max-width: 1024px) {
     .works-slider .slick-prev {
-        left: -130px;
+        left: -150px;
     }
     .works-slider .slick-next{
-        right: -130px;
+        right: -150px;
     }
 }
 

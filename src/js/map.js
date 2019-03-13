@@ -1,6 +1,5 @@
 (($) => {
     $(document).ready(() => {
-        
         const $map = $('.map-container');
         const map = new google.maps.Map(
             $map[0], {

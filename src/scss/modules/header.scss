@@ -7,6 +7,7 @@
     z-index: 100;
     transition: padding .5s ease-in-out, background-color .5s ease-in-out;
     background-color: $main-color;
+    display: none;
 
     @include respond-to(phone) {
         padding: 10px 0;
@@ -36,6 +37,8 @@
 }
 
 .logo {
+    padding: 0 15px;
+    box-sizing: border-box;
     &__img {
         @include respond-to(phone) {
             height: 60px;
@@ -46,6 +49,7 @@
 .nav {
     @include flex-between;
     @include flex-wrapped;
+    align-items: initial; 
 
     &__list {
         @include list-reset();
@@ -75,10 +79,11 @@
     &__link {
         display: inline-block;
         @include font-heading-light;
-        font-weight: 700;
+        font-weight: 400;
+        font-size: rem(24);
         text-transform: uppercase;
         text-decoration: none;
-        padding: 20px 15px;
+        padding: 17px 15px;
         width: 100%;
         box-sizing: border-box;
         position: relative;

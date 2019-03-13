@@ -126,8 +126,3 @@ $desktop: 1024px;
 	font-family: $altFont;
 	color: $altFontColor;
 }
-
-@mixin size($width,$height: $width) {
-	width: $width;
-	height: $height;
-  }

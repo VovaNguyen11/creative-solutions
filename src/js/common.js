@@ -10,8 +10,7 @@
                 $header.addClass('sticky');
             } else {
                 $header.removeClass('sticky');
-                scrollPosition = window.scrollY - 1;
-                console.log('w' + window.scrollY);
+                scrollPosition = window.scrollY;
                 if (window.scrollY > 100) {
                     $header.removeClass('header--transparent');
                 } else {
@@ -25,7 +24,6 @@
               $(".nav__list").toggleClass("showing");
         });
 
-
         //Back To Top
         const $backToTop = $('.back-to-top');
         $backToTop.click(() => {
@@ -36,7 +34,7 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 4000,
             infinite: true,
             responsive: [
@@ -85,18 +83,19 @@
                     location.hostname == this.hostname
                 ) {
                     // Figure out element to scroll to
-                    var target = $(this.hash);
+                    const headerHeight = $('.header').height();
+                    let target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     // Does a scroll target exist?
                     if (target.length) {
                         // Only prevent default if animation is actually gonna happen
                         e.preventDefault();
                         $('html, body').animate({
-                            scrollTop: target.offset().top
+                            scrollTop: target.offset().top-headerHeight
                         }, 1000, function () {
                             // Callback after animation
                             // Must change focus!
-                            var $target = $(target);
+                            let $target = $(target);
                             $target.focus();
                             if ($target.is(":focus")) { // Checking if the target was focused
                                 return false;

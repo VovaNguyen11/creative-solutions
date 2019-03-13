@@ -1,0 +1,114 @@
+.form {
+    width: calc(920/1170 * 100%);
+    margin: 0 auto;
+    padding: 220px 15px 30px;
+    box-sizing: border-box;
+    font-size: 0;
+    position: relative;
+
+    @include respond-to(phone) {
+        width: 100%;
+    }
+
+    &>*:not(.form__errors-list):not(.form__submit) {
+        border: 1px solid transparent;
+        background-color: $form-bg-color;
+        padding: 18px 27px 15px;
+        box-sizing: border-box;
+        @include font-light;
+        font-size: rem(18);
+        border-radius: $border-radius;
+
+        &:focus {
+            outline: none;
+        }
+
+        &[class*="invalid"] {
+            border: 1px solid red;
+        }
+
+        &[class*="invalid"]::placeholder {
+            color: red;
+        }
+    }
+
+    &__name,
+    &__email {
+        width: calc(50% - 15px);
+        margin-bottom: 25px;
+
+        @include respond-to(phone) {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    }
+
+    &__name {
+        margin-right: 30px;
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 55px;
+        resize: none;
+
+        @include respond-to(phone) {
+            margin-bottom: 30px;
+            height: 150px;
+        }
+    }
+
+    &__submit {
+        display: block;
+        margin: 0 auto;
+        width: 290px;
+        background-color: $main-bg-color;
+        @include font-heading-light;
+        font-weight: 700;
+        font-size: rem(18);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 24px 20px 20px;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 4px solid rgba(0, 0, 0, .15);
+        border-radius: $border-radius;
+        transition: transform .2s, background-color .2s;
+
+        &:hover,
+        &:focus {
+            transform: translateY(4px);
+            background-color: darken($main-bg-color, 2%);
+            outline: none;
+        }
+
+        @include respond-to(phone) {
+            width: 175px;
+            padding: 20px;
+        }
+    }
+
+    &>*::placeholder {
+        @include font-light;
+        font-style: italic;
+        font-weight: 300;
+    }
+
+    &__errors-list {
+        @include list-reset;
+        text-align: left;
+        position: absolute;
+        top: 75px;
+
+        @include respond-to(phone) {
+            display: none;
+        }
+    }
+
+    &__errors {
+        font-size: rem(18);
+        text-decoration: none;
+        color: red;
+    }
+}

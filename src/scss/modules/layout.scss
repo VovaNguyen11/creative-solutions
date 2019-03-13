@@ -5,6 +5,7 @@
   box-sizing: border-box;
 
   &--about {
+    padding: 0;
     display: grid;
     grid-template-columns: calc(380/1170 * 100%) auto;
 
@@ -14,6 +15,7 @@
   }
 
   &--services {
+    padding: 0;
     display: grid;
     grid-template-columns: calc(760/1170 * 100%) calc(410/1170 * 100%);
 
@@ -22,7 +24,7 @@
       grid-template-rows: repeat(2, auto);
     }
   }
-
+  
   &--footer {
     @include flex-between;
     padding: 0 30px;

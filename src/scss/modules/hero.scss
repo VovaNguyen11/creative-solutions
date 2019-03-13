@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    padding: 400px 0 500px;
+    padding: 390px 0 503px;
     @include section-bg('/assets/img/bg-hero.jpg');
 
     @include respond-to(tablet) {
@@ -21,15 +21,22 @@
         font-size: rem(72);
         text-transform: uppercase;
         color: $altFontColor;
-        margin: 0;
+        margin: 0 0 13px 0;
+        @include respond-to(phone){
+            line-height: 1;
+            margin-bottom: 10px;
+        }
     }
 
     .subheading {
-        max-width: 730px;
+        max-width: 720px;
         margin: 0 auto;
         @include font-light;
         font-size: rem(30);
         font-weight: normal;
         font-style: italic;
+        @include respond-to(phone){
+            line-height: 1.2;
+        }
     }
 }

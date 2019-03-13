@@ -4,16 +4,15 @@
     &--about {
         position: relative;
         background-color: $main-color;
-
-        &:before {
-            @include overlay('/assets/img/bg-about.jpg');
-            opacity: .5;
-        }
-
         padding: 75px 0 0;
 
         @include respond-to(phone) {
             padding: 30px 0 0;
+        }
+
+        &:before {
+            @include overlay('/assets/img/bg-about.jpg');
+            opacity: .5;
         }
     }
 
@@ -30,7 +29,7 @@
 
         @include respond-to(phone) {
             order: -1;
-            padding: 50px 30px;
+            padding: 30px 30px;
         }
     }
 
@@ -54,16 +53,20 @@
 .section-heading {
     @include font-heading-light;
     font-size: rem(36);
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
     position: relative;
 
     &--services {
-        margin-bottom: 110px;
+        margin: 22px 0 105px;
 
         @include respond-to(phone) {
             margin-bottom: 30px;
         }
+    }
+
+    &--works {
+        margin: 22px 0 58px;
     }
 
     &--dark {
@@ -75,7 +78,7 @@
     width: 195px;
     display: block;
     box-sizing: border-box;
-    padding: 15px 50px;
+    padding: 13px 15px 12px 15px;
     text-decoration: none;
     text-align: center;
     @include font-dark;
@@ -119,11 +122,12 @@
                 margin-right: 10px;
             }
         }
-        &:hover{
+
+        &:hover {
             transform: rotate(360deg);
         }
 
-        img{
+        img {
             width: 100%;
             height: auto;
             display: block;
@@ -140,7 +144,7 @@
 .back-to-top {
     @include flex-centered;
     position: absolute;
-    bottom: 80px;
+    bottom: 75px;
     right: 130px;
     @include size(85px);
     box-sizing: border-box;
