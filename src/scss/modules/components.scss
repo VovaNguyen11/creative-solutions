@@ -11,7 +11,7 @@
         }
 
         &:before {
-            @include overlay('/assets/img/bg-about.jpg');
+            @include overlay('../img/bg-about.jpg');
             opacity: .5;
         }
     }
@@ -21,7 +21,7 @@
         background-color: $main-color;
 
         &:before {
-            @include overlay('/assets/img/bg-services.jpg');
+            @include overlay('../img/bg-services.jpg');
             opacity: .5;
         }
 

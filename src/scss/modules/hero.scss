@@ -1,7 +1,7 @@
 .hero {
     position: relative;
     padding: 390px 0 503px;
-    @include section-bg('/assets/img/bg-hero.jpg');
+    @include section-bg('../img/bg-hero.jpg');
 
     @include respond-to(tablet) {
         padding: 300px 0 350px;

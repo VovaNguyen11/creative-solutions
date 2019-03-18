@@ -32,7 +32,7 @@ module.exports = {
       exclude: '/node_modules/'
     }, {
       test: /\.(jpe?g|png|gif|svg)$/,
-      loader: 'file-loader,',
+      loader: 'url-loader',
       options: { name: '[name].[ext]'}
     }, {
       test: /\.scss$/,
