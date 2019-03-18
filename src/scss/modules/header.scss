@@ -7,7 +7,6 @@
     z-index: 100;
     transition: padding .5s ease-in-out, background-color .5s ease-in-out;
     background-color: $main-color;
-    display: none;
 
     @include respond-to(phone) {
         padding: 10px 0;
@@ -49,7 +48,6 @@
 .nav {
     @include flex-between;
     @include flex-wrapped;
-    align-items: initial; 
 
     &__list {
         @include list-reset();
