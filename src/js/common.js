@@ -30,6 +30,24 @@
             $('html').animate({ scrollTop: 0 }, 1000); 
         })
 
+        // Animation of service items
+        function servicesInVision() {
+            const $servicesSection = $('.services');
+            const windowBottom = $(window).scrollTop() + $(window).height();
+            const serviceTop = $servicesSection.offset().top;
+            return windowBottom >= serviceTop;
+        }
+
+        $(window).scroll(function() {
+	        if (servicesInVision()) {
+                let animationDelay = 300;
+                $('.services').find('.services__item').each(function(){
+                    $(this).delay(animationDelay).animate({opacity:1});
+                    animationDelay+=500;
+                })
+	        }
+        });
+
         $('.works-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
