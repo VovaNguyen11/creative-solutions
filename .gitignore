@@ -5,7 +5,7 @@
 
 # Node
 node_modules
-src
+.src
 
 # BD, logs
 *.log
